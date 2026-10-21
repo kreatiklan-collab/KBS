@@ -1,8 +1,12 @@
 # Kreatiklan Client Portal
 
-A dependency-free, responsive preview of a design collaboration portal. All application source lives in this folder in `kreatiklan-collab/KBS`.
+A responsive design collaboration portal with two builds: the browser-local Sites demonstration and a PHP-backed SiteGround application. All application source lives in this folder in `kreatiklan-collab/KBS`.
 
-## Run
+## SiteGround application
+
+Run `node scripts/build-siteground.mjs` for the real account/shared-storage build. This includes server-validated workspace access, private uploads, account administration, persistent timelines, and a notification queue. See [deployment details](server/DEPLOYMENT.md). Actual SiteGround hosting, DNS, HTTPS, and email transport have not yet been configured from this chat.
+
+## Run the demonstration
 
 From the repository root:
 
@@ -30,7 +34,7 @@ Open http://localhost:8000. Choose a sample workspace and enter as the client or
 
 This is a reviewable frontend prototype, not a production service. Demo role selection is not authentication. Workspace scoping is a UI behavior, not a security boundary. All sample records are browser-local and do not synchronize across users or devices. Attachments are limited to five files per update and 4 MB per file. All event times display in Asia/Jakarta (WIB).
 
-Before real clients use it, implement server-side shared accounts, secure sessions, authorization on every workspace/request/file operation, durable shared database and object storage, and verified email delivery. Add custom-domain DNS after the preview is approved. Sender/recipient addresses and production passwords are not embedded in this source.
+The PHP build implements shared accounts, secure sessions, authorization on workspace/request/file operations, a shared database, private server file storage, and an optional queued-mail worker. Those features are not active on the static Sites demonstration. Before real clients use it, deploy and verify the PHP application and its hosting/backup configuration; activate email only after sender and transport verification. Add custom-domain DNS after the preview is approved. Sender/recipient addresses and production passwords are not embedded in this source.
 
 The UI follows the existing employee portal’s TailAdmin-style sidebar/dashboard structure, its red brand accent (`#ea1d25`), Outfit typography, and official Kreatiklan wordmark. The wordmark was copied from `src/workday/kreatiklan-logo.svg` in the existing Kreatiklan portal source.
 

@@ -85,3 +85,5 @@ body{font-size:16px;line-height:1.5}
 .help-box strong{font-size:14px}.help-box p{font-size:13px}.footer-note{padding-top:2px}
 @media(max-width:930px){.request-table-head{display:none}.request-card.request-row{min-width:0;grid-template-columns:1fr 1fr;gap:15px 20px;padding:20px 24px}.request-title{grid-column:1/-1;grid-row:1}.request-reference{grid-column:1/-1;grid-row:2}.request-cell[data-label]:before{content:attr(data-label);display:block;font-size:12px;color:#667085;margin-bottom:4px}.request-cell:last-child{font-size:14px}.request-row .badge{font-size:12px}.request-title strong{font-size:16px}}
 @media(max-width:680px){.attention-heading{padding:19px 18px}.attention-heading h2{font-size:17px}.attention-item{padding:18px;flex-wrap:wrap;gap:12px}.attention-item .btn{min-height:40px}.attention-heading p{line-height:1.7}.request-card.request-row{padding:20px 18px;gap:15px}.page-head .eyebrow{font-size:10px}.sidebar .help-box{margin-top:20px}}
+#workspace-form .btn,#password-form .btn,#client-password-form .btn{margin-top:16px}
+#workspace-form .field{margin-top:18px}

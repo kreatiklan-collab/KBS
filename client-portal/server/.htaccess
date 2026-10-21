@@ -1,0 +1,4 @@
+Options -Indexes
+<FilesMatch "^(config|config\.example|send-notifications)\.php$">
+Require all denied
+</FilesMatch>
