@@ -20,6 +20,7 @@ Open http://localhost:8000. Choose a sample workspace and enter as the client or
 - Transparent per-request conversations; no private internal notes.
 - Staff design submissions with uploaded files or HTTP(S) links; client revisions and approval.
 - Approval timestamps and reopening that preserve the entire timeline.
+- Deleted requests archive: either side can delete with a required reason. Original briefs, files, comments, approvals, actor side/name, and deletion timestamps stay visible in a read-only timeline. Deleted requests are excluded from active/completed counts.
 - IndexedDB persistence for requests and file contents across reloads in the same browser.
 - In-session notification inbox. Email delivery is explicitly not connected.
 
