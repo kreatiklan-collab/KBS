@@ -31,6 +31,10 @@ Before real clients use it, implement server-side shared accounts, secure sessio
 
 The UI follows the existing employee portal’s TailAdmin-style sidebar/dashboard structure, its red brand accent (`#ea1d25`), Outfit typography, and official Kreatiklan wordmark. The wordmark was copied from `src/workday/kreatiklan-logo.svg` in the existing Kreatiklan portal source.
 
+## Build for hosting
+
+From the repository root, run `node scripts/build-client-portal.mjs`. This copies the static application and assets into ignored `dist/`, without preview tests or documentation. `.openai/hosting.json` points the private preview deployment at that output. KBS remains the canonical source repository.
+
 ## Checks
 
 ```sh
