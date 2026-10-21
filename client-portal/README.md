@@ -1,0 +1,55 @@
+# Kreatiklan Client Portal
+
+A responsive design collaboration portal with two builds: the browser-local Sites demonstration and a PHP-backed SiteGround application. All application source lives in this folder in `kreatiklan-collab/KBS`.
+
+## SiteGround application
+
+Run `node scripts/build-siteground.mjs` for the real account/shared-storage build. This includes server-validated workspace access, private uploads, account administration, persistent timelines, and a notification queue. See [deployment details](server/DEPLOYMENT.md). Actual SiteGround hosting, DNS, HTTPS, and email transport have not yet been configured from this chat.
+
+## Run the demonstration
+
+From the repository root:
+
+```sh
+python3 -m http.server 8000 --directory client-portal
+```
+
+Open http://localhost:8000. Choose a sample workspace and enter as the client or Kreatiklan team. Use the header role switcher to try both sides. Staff can switch client workspaces. Leave the preview to select a different sample client.
+
+## Included
+
+- Two sample client workspaces, one shared account per side represented by demo roles.
+- New requests with title, brief, type, deadline, optional dimensions/name, references, and attachments.
+- Business-focused dashboard with review/clarification/deadline attention queue, a default request register, status filters, search, optional grid/board layouts, and activity history.
+- Requested deadlines and staff-confirmed delivery dates shown separately, with date changes recorded in the timeline.
+- Numbered deliverable versions and approvals linked to the approved submission. Staff can request clarification; client responses clear the clarification flag.
+- Transparent per-request conversations; no private internal notes.
+- Staff design submissions with uploaded files or HTTP(S) links; client revisions and approval.
+- Approval timestamps and reopening that preserve the entire timeline.
+- Deleted requests archive: either side can delete with a required reason. Original briefs, files, comments, approvals, actor side/name, and deletion timestamps stay visible in a read-only timeline. Deleted requests are excluded from active/completed counts.
+- IndexedDB persistence for requests and file contents across reloads in the same browser.
+- In-session notification inbox. Email delivery is explicitly not connected.
+
+## Preview limits
+
+This is a reviewable frontend prototype, not a production service. Demo role selection is not authentication. Workspace scoping is a UI behavior, not a security boundary. All sample records are browser-local and do not synchronize across users or devices. Attachments are limited to five files per update and 4 MB per file. All event times display in Asia/Jakarta (WIB).
+
+The PHP build implements shared accounts, secure sessions, authorization on workspace/request/file operations, a shared database, private server file storage, and an optional queued-mail worker. Those features are not active on the static Sites demonstration. Before real clients use it, deploy and verify the PHP application and its hosting/backup configuration; activate email only after sender and transport verification. Add custom-domain DNS after the preview is approved. Sender/recipient addresses and production passwords are not embedded in this source.
+
+The UI follows the existing employee portal’s TailAdmin-style sidebar/dashboard structure, its red brand accent (`#ea1d25`), Outfit typography, and official Kreatiklan wordmark. The wordmark was copied from `src/workday/kreatiklan-logo.svg` in the existing Kreatiklan portal source.
+
+## Build for hosting
+
+From the repository root, run `node scripts/build-client-portal.mjs`. This copies the static application and assets into ignored `dist/`, without preview tests or documentation. `.openai/hosting.json` points the private preview deployment at that output. KBS remains the canonical source repository.
+
+## Checks
+
+```sh
+node --check client-portal/app.js
+```
+
+`tests/portal.spec.cjs` provides browser workflow checks with Playwright. Install Playwright separately in your test environment and set `PLAYWRIGHT_PATH` to its entry point if it is not available as `playwright`. Start the server above, then run:
+
+```sh
+PORTAL_BASE_URL=http://localhost:8000 node client-portal/tests/portal.spec.cjs
+```

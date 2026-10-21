@@ -1,0 +1,11 @@
+node_modules/
+artifacts/
+playwright-report/
+test-results/
+.DS_Store
+
+dist/
+client-portal/server/config.php
+siteground-dist/
+portal-private/
+*.sqlite
