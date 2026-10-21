@@ -29,3 +29,21 @@ body{font-size:16px;line-height:1.5}
 @media(max-width:930px){.topbar>.row{flex-wrap:wrap}.welcome-card h2{font-size:23px}.welcome-card p{max-width:70%}}
 @media(max-width:680px){.shell{display:block}.sidebar{width:260px}.request-grid{grid-template-columns:1fr}.topbar .row{gap:6px}.topbar select{font-size:12px;max-width:124px}.topbar{gap:6px;padding:12px}.preview-bar{padding:10px 16px;align-items:flex-start}.preview-bar span:first-child{max-width:230px}.preview-bar button{font-size:12px;white-space:nowrap}.page-head{flex-wrap:wrap;gap:16px}.page-head p{max-width:none}.page-head .btn{font-size:15px;padding:11px 14px}.welcome-card h2{font-size:21px;max-width:75%}.welcome-card p{font-size:14px;max-width:70%}.welcome-art{opacity:.4}.stat small{font-size:13px}.stat{padding:16px 12px;gap:10px}.tabs{gap:20px}.tab{font-size:14px}.search input{width:100%;font-size:15px}.panel-head{flex-wrap:wrap}.view-toggle button{font-size:13px}.panel-foot{font-size:13px}.footer-note{font-size:12px;flex-wrap:wrap}.composer .form-row{grid-template-columns:1fr}.composer-footer>span{max-width:none}.form-actions{flex-wrap:wrap}.request-body h3{min-height:0}.request-body p{height:auto;max-height:51px}.detail-side .meta-item{display:block}.login-form{padding:30px 22px}.board{grid-template-columns:repeat(5,265px)}}
 .request-body p,.request-footer,.request-id,.event-time,.footer-note,.panel-foot,.event-message .muted{color:#667085}
+
+/* Kreatiklan brand lockup, product family, and red workspace navigation. */
+.sidebar{background:#ea1d25;color:#fff;overflow-y:auto}
+.sidebar .logo{padding:0 4px;flex-shrink:0}.sidebar .logo img{width:100%;max-width:220px}
+.login .logo img{width:280px;max-width:100%}
+.sidebar .brand-sub{color:#fff;margin:10px 12px 11px;letter-spacing:2px}
+.product-family{font-size:13px;line-height:1.7;color:#fff;margin:0 12px 26px}
+.product-family strong{font-weight:600}
+.sidebar .workspace{border-color:#ffffff55;background:#b70e172b;flex-shrink:0}
+.sidebar .workspace small,.sidebar .nav-label,.sidebar .profile small{color:#fff}
+.sidebar .avatar,.sidebar .workspace .avatar{background:#fff0f1;color:#b7131b}
+.sidebar .nav-item{color:#fff;flex-shrink:0}.sidebar .nav-item:hover{background:#ffffff14}
+.sidebar .nav-item.active{background:#a50f18;color:#fff}
+.sidebar .nav-item.active .icon{color:#fff}.sidebar .count{background:#ffffff26;color:#fff}
+.sidebar .help-box{background:#b7131b;color:#fff}.sidebar .help-box strong,.sidebar .help-box p,.sidebar .help-box button{color:#fff}
+.sidebar .profile{border-color:#ffffff44;color:#fff}.sidebar-bottom{flex-shrink:0}
+.art-check img{display:block;width:60px;height:60px;object-fit:contain}
+@media(max-width:1150px) and (min-width:681px){.product-family{margin-left:8px;margin-right:8px;font-size:12px}.sidebar .logo{padding:0}}
