@@ -16,7 +16,9 @@ Open http://localhost:8000. Choose a sample workspace and enter as the client or
 
 - Two sample client workspaces, one shared account per side represented by demo roles.
 - New requests with title, brief, type, deadline, optional dimensions/name, references, and attachments.
-- Search, status filters, grid/list/board layouts, and activity history.
+- Business-focused dashboard with review/clarification/deadline attention queue, a default request register, status filters, search, optional grid/board layouts, and activity history.
+- Requested deadlines and staff-confirmed delivery dates shown separately, with date changes recorded in the timeline.
+- Numbered deliverable versions and approvals linked to the approved submission. Staff can request clarification; client responses clear the clarification flag.
 - Transparent per-request conversations; no private internal notes.
 - Staff design submissions with uploaded files or HTTP(S) links; client revisions and approval.
 - Approval timestamps and reopening that preserve the entire timeline.
